@@ -19,7 +19,7 @@ It's the **LAST** project.
 
 - I used these extras
   - Add end date and display length of trip.
-	- Integrate the REST Countries API to pull in data for the country being visited.
+  - Integrate the REST Countries API to pull in data for the country being visited.
 
 
 ## Final
