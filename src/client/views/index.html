@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Capstone Travel App</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id = "app">
+            <div>
+                <h1>Travel App</h1>
+            </div>
+
+            <div id = "input_data">
+                <div class ="zip tooltip">
+                    <label for="zip">Enter Postal Code here</label>
+                    <input type="text" id="zip" placeholder="enter postal code here">
+                    <span class="tooltiptext">Destination Postal Code</span>
+                </div>
+            
+                <div class ="country tooltip">
+                    <span class="tooltiptext">Select Country Name</span>
+                    <label for="cc">Select your destination country</label>
+                    <select id="cc" name="cc" onchange="Client.getflag()">
+                        <option value="" selected="selected"></option>
+                        <option value="AX">Aland</option>
+                        <option value="DZ">Algeria</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AD">Andorra</option>
+                        <option value="AR">Argentina</option>
+                        <option value="AU">Australia</option>
+                        <option value="AT">Austria</option>
+                        <option value="AZ">Azerbaijan</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="BY">Belarus</option>
+                        <option value="BE">Belgium</option>
+                        <option value="BM">Bermuda</option>
+                        <option value="BR">Brazil</option>
+                        <option value="BG">Bulgaria</option>
+                        <option value="CA">Canada</option>
+                        <option value="CL">Chile</option>
+                        <option value="CO">Colombia</option>
+                        <option value="CR">Costa Rica</option>
+                        <option value="HR">Croatia</option>
+                        <option value="CZ">Czechia</option>
+                        <option value="DK">Denmark</option>
+                        <option value="DO">Dominican Republic</option>
+                        <option value="EE">Estonia</option>
+                        <option value="FO">Faroe Islands</option>
+                        <option value="FI">Finland</option>
+                        <option value="FR">France</option>
+                        <option value="GF">French Guiana</option>
+                        <option value="DE">Germany</option>
+                        <option value="GR">Greece</option>
+                        <option value="GL">Greenland</option>
+                        <option value="GP">Guadeloupe</option>
+                        <option value="GU">Guam</option>
+                        <option value="GT">Guatemala</option>
+                        <option value="GG">Guernsey</option>
+                        <option value="HU">Hungary</option>
+                        <option value="IS">Iceland</option>
+                        <option value="IN">India</option>
+                        <option value="IE">Ireland</option>
+                        <option value="IM">Isle of Man</option>
+                        <option value="IT">Italy</option>
+                        <option value="JP">Japan</option>
+                        <option value="JE">Jersey</option>
+                        <option value="LV">Latvia</option>
+                        <option value="LI">Liechtenstein</option>
+                        <option value="LT">Lithuania</option>
+                        <option value="LU">Luxembourg</option>
+                        <option value="MW">Malawi</option>
+                        <option value="MY">Malaysia</option>
+                        <option value="MT">Malta</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MQ">Martinique</option>
+                        <option value="YT">Mayotte</option>
+                        <option value="MX">Mexico</option>
+                        <option value="FM">Micronesia</option>
+                        <option value="MD">Moldova</option>
+                        <option value="MC">Monaco</option>
+                        <option value="NL">Netherlands</option>
+                        <option value="NC">New Caledonia</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="MK">North Macedonia</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="NO">Norway</option>
+                        <option value="PK">Pakistan</option>
+                        <option value="PW">Palau</option>
+                        <option value="PH">Philippines</option>
+                        <option value="PL">Poland</option>
+                        <option value="PT">Portugal</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="RE">Réunion</option>
+                        <option value="RO">Romania</option>
+                        <option value="RU">Russia</option>
+                        <option value="PM">Saint Pierre and Miquelon</option>
+                        <option value="SM">San Marino</option>
+                        <option value="RS">Serbia</option>
+                        <option value="SG">Singapore</option>
+                        <option value="SK">Slovakia</option>
+                        <option value="SI">Slovenia</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="KR">South Korea</option>
+                        <option value="ES">Spain</option>
+                        <option value="LK">Sri Lanka</option>
+                        <option value="SJ">Svalbard and Jan Mayen</option>
+                        <option value="SE">Sweden</option>
+                        <option value="CH">Switzerland</option>
+                        <option value="TH">Thailand</option>
+                        <option value="TR">Turkey</option>
+                        <option value="VI">U.S. Virgin Islands</option>
+                        <option value="UA">Ukraine</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="US">United States</option>
+                        <option value="UY">Uruguay</option>
+                        <option value="VA">Vatican City</option>
+                        <option value="WF">Wallis and Futuna</option>
+                    </select>
+                </div>
+
+                <div id = "flag" class="tooltip">
+                    <span class="tooltiptext">The country flag</span>
+                    <img id = "flgimg">
+                </div>
+            </div>
+            
+            <div id = "input_date">
+                <div class ="travel tooltip">
+                    <label for="travel">Travel day</label>
+                    <span class="tooltiptext">input travel day</span>
+                    <input type="date" id="travel" name="travel">
+                </div>
+                
+                <div class ="return tooltip">
+                    <label for="return">Return day</label>
+                    <span class="tooltiptext">input return day</span>
+                    <input type="date" id="return" name="return">
+                </div>
+            </div>
+
+            <button id="generate" type = "submit" class="tooltip" onclick="Client.generate_entry()"> Generate
+                <span class="tooltiptext">Press and wait to collect data</span>
+            </button>
+            
+            
+            
+            <div class ="entry tooltip">
+                <div>Trip info</div>
+                <span class="tooltiptext">Info for the trip</span>
+            </div>
+            <div id = "image" align = "center" class="tooltip">
+                <span class="tooltiptext">Image for the destination</span>
+                <img id = "contimg">
+            </div>
+        </div>
+        
+        <footer>
+            <p>Updated by Tarik Gad</p>
+        </footer>
+                
+        <script>
+            for(let i=0;i<document.getElementsByClassName("tooltip").length;i++){
+                document.getElementsByClassName("tooltip")[i].addEventListener("mouseover",function(){
+                    document.getElementsByClassName("tooltiptext")[i].style.visibility="visible";
+                    setTimeout(function(){
+                        document.getElementsByClassName("tooltiptext")[i].style.visibility="hidden";
+                    },2000);
+                });
+            };
+
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+                });
+            }
+            else {console.log("serviceWorker not supported in navigator")}
+        </script>
+    </body>
+</html>
