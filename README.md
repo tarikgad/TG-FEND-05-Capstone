@@ -17,6 +17,10 @@ It's the **LAST** project.
   - Node.js from project `3`
   - All other stuff from project `4`
 
+- I used these extras
+  - Add end date and display length of trip.
+	- Integrate the REST Countries API to pull in data for the country being visited.
+
 
 ## Final
 - Use `npm install` to install all ***node_modules***
